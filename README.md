@@ -18,7 +18,8 @@
 ## 2. Disable trunk opening from keyfob unless the doors are unlocked
 
 ```
-    BDC_BODY3 > VAM_DISABLE_OPEN_LID_AT_NOT_UNLOCKED > aktiv
+    BDC_BODY3 (Body Domain Controller) 
+        VAM_DISABLE_OPEN_LID_AT_NOT_UNLOCKED > aktiv
 ```
 
 
@@ -46,3 +47,7 @@ Export Mode > VCM > Master (tab) > I-Steaps (section) > Read --> Integration ste
 
 - There's no regional specification for the psdzdata.
 - When you read out an ECU from your car, E-Sys is looking in your psdzdata folder for the corresponding file for the ECU. If your psdzdata is too old you will not be able to read the CAFD from an ECU, that's all.
+
+## Links
+
+- [https://bimmercode.app/cars/g05/](https://bimmercode.app/cars/g05/)
