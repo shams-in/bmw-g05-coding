@@ -1,6 +1,6 @@
 # BMW X5 (G05) Coding with E-SYS
 
-## Hide "Emergency call system malfunction"
+## 1. Hide "Emergency call system malfunction"
 
 ```
     DKOMBI4 (Instrument Cluster)
@@ -15,10 +15,25 @@
             ST_ECAL_TIMEOUT -> nicht_aktiv
 ```
 
-## Disable trunk opening from keyfob unless the doors are unlocked
+## 2. Disable trunk opening from keyfob unless the doors are unlocked
 
 ```
     BDC_BODY3 > VAM_DISABLE_OPEN_LID_AT_NOT_UNLOCKED > aktiv
+```
+
+
+## 3. Soft trunk open/close
+
+```
+    HKFM2 (Tailgate Function Module)
+        3011 APPL_PLG_SPEED_PROFILE
+            ProfileOpenStartNode1PwmPlg (0x00 0xC8) -> 0x00 0xA0
+            ProfileOpenStartNode2PwmPlg (0x02 0x62) -> 0x00 0xA0
+            ProfileCloseStopNode1PwmPlg (0x02 0x62) -> 0x00 0xA0
+            ProfileCloseStopNode2PwmPlg (0x02 0x62) -> 0x00 0xA0
+
+    HEX VALUES IN ASC ORDER
+    000A 00A0 00BE 00C8 00FA 017C 0212 0226
 ```
 
 ## Check the current version of psdzdata the car has
